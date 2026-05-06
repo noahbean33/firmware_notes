@@ -1,0 +1,7 @@
+{
+  "rust-analyzer.cargo.allTargets": false,
+  "rust-analyzer.cargo.target": "riscv32imac-unknown-none-elf",
+  "rust-analyzer.cargo.features": [
+    "esp32c6"
+  ]
+}

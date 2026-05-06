@@ -1,0 +1,50 @@
+[package]
+edition      = "2024"
+name         = "re-boot"
+rust-version = "1.88"
+version      = "0.1.0"
+
+[[bin]]
+name = "re-boot"
+path = "./src/bin/main.rs"
+
+[features]
+esp32c6 = [
+    "esp-hal/esp32c6",
+    "esp-bootloader-esp-idf/esp32c6",
+    "esp-println/esp32c6",
+    "esp-storage/esp32c6",
+    "esp-backtrace?/esp32c6",
+]
+test-as-app = [ "esp-backtrace" ]
+
+[dependencies]
+esp-hal = { version = "~1.0", features = ["log-04", "unstable"] }
+
+
+esp-bootloader-esp-idf = { version = "0.4.0", features = ["log-04"] }
+log                    = "0.4.27"
+
+critical-section = "1.2.0"
+esp-println      = { version = "0.16.1", features = ["log-04"] }
+embedded-storage = "0.3.1"
+esp-storage = "0.8.1"
+esp-backtrace = { version = "0.18.1", features = ["panic-handler", "println"], optional = true }
+
+
+[profile.dev]
+# Rust debug is too slow.
+# For debug builds always builds with some optimization
+opt-level = "s"
+
+[profile.release]
+codegen-units    = 1     # LLVM can perform better optimizations using a single thread
+debug            = 2
+debug-assertions = false
+incremental      = false
+lto              = 'fat'
+opt-level        = 's'
+overflow-checks  = false
+
+[build-dependencies]
+esp-metadata-generated = { version = "0.3.0", features = ["build-script"] }
