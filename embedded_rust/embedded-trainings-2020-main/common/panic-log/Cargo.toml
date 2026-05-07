@@ -1,0 +1,26 @@
+[package]
+authors = ["Jorge Aparicio <jorge.aparicio@ferrous-systems.com>"]
+edition = "2018"
+license = "MIT OR Apache-2.0"
+name = "panic-log"
+version = "0.0.0"
+
+[dependencies]
+cortex-m = "0.7.6"
+defmt = "0.3.2"
+
+
+[features]
+
+default = [
+  "other-feature"
+]
+other-feature = []
+
+# do NOT modify these features
+defmt-default = []
+defmt-trace = []
+defmt-debug = []
+defmt-info = []
+defmt-warn = []
+defmt-error = []

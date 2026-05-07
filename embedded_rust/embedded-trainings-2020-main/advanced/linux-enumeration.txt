@@ -1,0 +1,42 @@
+INFO:usb_4 -- USB: UsbReset @ 318.66455ms
+INFO:usb_4 -- USB reset condition detected
+INFO:usb_4 -- USB: UsbEp0Setup @ 391.418456ms
+INFO:usb_4 -- EP0: GetDescriptor { descriptor: Device, length: 64 }
+INFO:dk::usbd -- EP0IN: start 18B transfer
+INFO:usb_4 -- USB: UsbEp0DataDone @ 391.723632ms
+INFO:usb_4 -- EP0IN: transfer complete
+INFO:dk::usbd -- EP0IN: transfer done
+INFO:usb_4 -- USB: UsbReset @ 442.016601ms
+INFO:usb_4 -- USB reset condition detected
+INFO:usb_4 -- USB: UsbEp0Setup @ 514.709471ms
+INFO:usb_4 -- EP0: SetAddress { address: Some(17) }
+INFO:usb_4 -- USB: UsbEp0Setup @ 531.37207ms
+INFO:usb_4 -- EP0: GetDescriptor { descriptor: Device, length: 18 }
+INFO:dk::usbd -- EP0IN: start 18B transfer
+INFO:usb_4 -- USB: UsbEp0DataDone @ 531.646727ms
+INFO:usb_4 -- EP0IN: transfer complete
+INFO:dk::usbd -- EP0IN: transfer done
+INFO:usb_4 -- USB: UsbEp0Setup @ 531.829832ms
+INFO:usb_4 -- EP0: GetDescriptor { descriptor: DeviceQualifier, length: 10 }
+ERROR:usb_4 -- EP0IN: unexpected request; stalling the endpoint
+INFO:usb_4 -- USB: UsbEp0Setup @ 532.226562ms
+INFO:usb_4 -- EP0: GetDescriptor { descriptor: DeviceQualifier, length: 10 }
+ERROR:usb_4 -- EP0IN: unexpected request; stalling the endpoint
+INFO:usb_4 -- USB: UsbEp0Setup @ 532.592772ms
+INFO:usb_4 -- EP0: GetDescriptor { descriptor: DeviceQualifier, length: 10 }
+ERROR:usb_4 -- EP0IN: unexpected request; stalling the endpoint
+INFO:usb_4 -- USB: UsbEp0Setup @ 533.020018ms
+INFO:usb_4 -- EP0: GetDescriptor { descriptor: Configuration { index: 0 }, length: 9 }
+INFO:dk::usbd -- EP0IN: start 9B transfer
+INFO:usb_4 -- USB: UsbEp0DataDone @ 533.386228ms
+INFO:usb_4 -- EP0IN: transfer complete
+INFO:dk::usbd -- EP0IN: transfer done
+INFO:usb_4 -- USB: UsbEp0Setup @ 533.569335ms
+INFO:usb_4 -- EP0: GetDescriptor { descriptor: Configuration { index: 0 }, length: 18 }
+INFO:dk::usbd -- EP0IN: start 18B transfer
+INFO:usb_4 -- USB: UsbEp0DataDone @ 533.935546ms
+INFO:usb_4 -- EP0IN: transfer complete
+INFO:dk::usbd -- EP0IN: transfer done
+INFO:usb_4 -- USB: UsbEp0Setup @ 534.118651ms
+INFO:usb_4 -- EP0: SetConfiguration { value: Some(42) }
+ERROR:usb_4 -- EP0IN: unexpected request; stalling the endpoint

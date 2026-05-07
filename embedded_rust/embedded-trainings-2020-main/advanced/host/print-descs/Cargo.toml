@@ -1,0 +1,11 @@
+[package]
+authors = ["Jorge Aparicio <jorge.aparicio@ferrous-systems.com>"]
+edition = "2018"
+license = "MIT OR Apache-2.0"
+name = "print-descs"
+version = "0.0.0"
+
+[dependencies]
+rusb = "0.5.5"
+anyhow = "1.0.31"
+consts = { path = "../../common/consts/" }

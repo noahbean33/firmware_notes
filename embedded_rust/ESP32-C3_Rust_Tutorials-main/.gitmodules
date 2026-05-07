@@ -1,0 +1,102 @@
+[submodule "submodules/statig"]
+	path = submodules/statig
+	url = git@github.com:mdeloof/statig.git
+[submodule "submodules/riscv-embassy-mess-work"]
+	path = submodules/riscv-embassy-mess-work
+	url = git@github.com:osobiehl/riscv-embassy-mess-work.git
+[submodule "submodules/reference_projects/smart-watch"]
+	path = submodules/reference_projects/smart-watch
+	url = git@github.com:simmsb/smart-watch.git
+[submodule "submodules/reference_projects/esp32-rmt-ws2812b"]
+	path = submodules/reference_projects/esp32-rmt-ws2812b
+	url = git@github.com:karlri/esp32-rmt-ws2812b.git
+[submodule "submodules/reference_projects/rust_esp32_std_amg8833"]
+	path = submodules/reference_projects/rust_esp32_std_amg8833
+	url = git@github.com:srbpavel/rust_esp32_std_amg8833.git
+[submodule "submodules/reference_projects/pulse-loop_firmware"]
+	path = submodules/reference_projects/pulse-loop_firmware
+	url = git@github.com:pulse-loop/firmware.git
+[submodule "submodules/reference_projects/esp-ambient"]
+	path = submodules/reference_projects/esp-ambient
+	url = git@github.com:horvbalint/esp-ambient.git
+[submodule "submodules/reference_projects/esp32-c3-rust-example"]
+	path = submodules/reference_projects/esp32-c3-rust-example
+	url = git@github.com:alepez/esp32-c3-rust-example.git
+[submodule "submodules/reference_projects/bosch-bme680"]
+	path = submodules/reference_projects/bosch-bme680
+	url = git@github.com:JakobLachermeier/bosch-bme680.git
+[submodule "submodules/reference_projects/rust_esp32_std_dallas"]
+	path = submodules/reference_projects/rust_esp32_std_dallas
+	url = git@github.com:srbpavel/rust_esp32_std_dallas.git
+[submodule "submodules/reference_projects/iot-wifi-setup"]
+	path = submodules/reference_projects/iot-wifi-setup
+	url = git@github.com:maxwase/iot-wifi-setup.git
+[submodule "submodules/reference_projects/gepsonka_TDK"]
+	path = submodules/reference_projects/gepsonka_TDK
+	url = git@github.com:Gepsonka/TDK.git
+[submodule "submodules/reference_projects/esp32-image-display"]
+	path = submodules/reference_projects/esp32-image-display
+	url = git@github.com:lily-mara/esp32-image-display.git
+[submodule "submodules/reference_projects/fishtank-rust"]
+	path = submodules/reference_projects/fishtank-rust
+	url = git@github.com:brianmay/fishtank-rust.git
+[submodule "submodules/reference_projects/BykeEmbedded"]
+	path = submodules/reference_projects/BykeEmbedded
+	url = git@github.com:Newintel/BykeEmbedded.git
+[submodule "submodules/reference_projects/rust-esp-idf-http-temp"]
+	path = submodules/reference_projects/rust-esp-idf-http-temp
+	url = git@github.com:schphil/rust-esp-idf-http-temp.git
+[submodule "submodules/reference_projects/esp-rust-lighting"]
+	path = submodules/reference_projects/esp-rust-lighting
+	url = git@github.com:MabaKalox/esp-rust-lighting.git
+[submodule "submodules/reference_projects/temp-monitor"]
+	path = submodules/reference_projects/temp-monitor
+	url = git@github.com:kj800x/temp-monitor.git
+[submodule "submodules/reference_projects/sensilo-v2"]
+	path = submodules/reference_projects/sensilo-v2
+	url = git@github.com:dbrgn/sensilo-v2.git
+[submodule "submodules/reference_projects/atom-motion-balance"]
+	path = submodules/reference_projects/atom-motion-balance
+	url = git@github.com:tana/atom-motion-balance.git
+[submodule "submodules/reference_projects/rued"]
+	path = submodules/reference_projects/rued
+	url = git@github.com:bsodmike/rued.git
+[submodule "submodules/reference_projects/M5-go"]
+	path = submodules/reference_projects/M5-go
+	url = git@github.com:Newintel/M5-go.git
+[submodule "submodules/reference_projects/esp32-file-server"]
+	path = submodules/reference_projects/esp32-file-server
+	url = git@github.com:hammer90/esp32-file-server.git
+[submodule "submodules/reference_projects/ruwm"]
+	path = submodules/reference_projects/ruwm
+	url = git@github.com:ivmarkov/ruwm.git
+[submodule "submodules/reference_projects/rust-esp32-std-demo"]
+	path = submodules/reference_projects/rust-esp32-std-demo
+	url = git@github.com:ivmarkov/rust-esp32-std-demo.git
+[submodule "submodules/ESP32-USB-Dongle"]
+	path = submodules/ESP32-USB-Dongle
+	url = git@github.com:pms67/ESP32-USB-Dongle.git
+[submodule "submodules/openocd-esp32"]
+	path = submodules/openocd-esp32
+	url = git@github.com:espressif/openocd-esp32.git
+[submodule "submodules/menu"]
+	path = submodules/menu
+	url = git@github.com:rust-embedded-community/menu.git
+[submodule "submodules/reference_projects/OFMon"]
+	path = submodules/reference_projects/OFMon
+	url = git@github.com:arashsm79/OFMon.git
+[submodule "submodules/reference_projects/rust-esp-websocket"]
+	path = submodules/reference_projects/rust-esp-websocket
+	url = git@github.com:kauly/rust-esp-websocket.git
+[submodule "submodules/reference_projects/esp32c3-hello"]
+	path = submodules/reference_projects/esp32c3-hello
+	url = git@github.com:imxood/esp32c3-hello.git
+[submodule "submodules/espressif-trainings"]
+	path = submodules/espressif-trainings
+	url = git@github.com:esp-rs/espressif-trainings.git
+[submodule "submodules/reference_projects/esp-sdmmc-experiment"]
+	path = submodules/reference_projects/esp-sdmmc-experiment
+	url = git@github.com:taunusflieger/esp-sdmmc-experiment.git
+[submodule "submodules/reference_projects/sd-card"]
+	path = submodules/reference_projects/sd-card
+	url = git@github.com:lonesometraveler/sd-card.git

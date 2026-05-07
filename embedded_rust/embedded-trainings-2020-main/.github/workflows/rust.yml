@@ -1,0 +1,67 @@
+name: Rust
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: check out repository
+      uses: actions/checkout@v2
+
+    - name: Use the latest stable release
+      run: rustup update stable && rustup default stable
+
+    - name: cache rust dependencies
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+    - name: cache linux dependencies
+      uses: actions/cache@v2
+      if: startsWith(runner.os, 'Linux')
+      with:
+        path: ~/.local/share/renv
+        key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-renv-
+
+    - name: install all dependencies
+      run: |
+        sudo apt update
+        sudo apt-get install libudev-dev libusb-1.0-0-dev
+        rustup +stable target add thumbv7em-none-eabihf
+
+    - name: build xtask'ed tools
+      working-directory: ./xtask
+      run: |
+        cargo build --verbose
+        cargo fmt --all -- --check
+        cargo xtask
+
+    - name: build and fmt beginner/apps
+      working-directory: ./beginner/apps
+      run: |
+        cargo install flip-link
+        cargo build --verbose
+        cargo fmt --all -- --check
+
+    - name: build and fmt advanced/firmware
+      working-directory: ./advanced/firmware
+      run: |
+        cargo install flip-link
+        cargo build --verbose
+        cargo fmt --all -- --check
