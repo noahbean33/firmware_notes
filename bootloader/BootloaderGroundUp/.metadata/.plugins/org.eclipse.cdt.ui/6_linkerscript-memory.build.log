@@ -1,0 +1,19 @@
+10:46:11 **** Incremental Build of configuration Debug for project 6_linkerscript-memory ****
+make -j8 all 
+arm-none-eabi-gcc -o "6_linkerscript-memory.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Gaming Laptop RTX\Documents\BootloaderGroundUp\6_linkerscript-memory\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="6_linkerscript-memory.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 6_linkerscript-memory.elf
+ 
+arm-none-eabi-objdump -h -S  6_linkerscript-memory.elf  > "6_linkerscript-memory.list"
+arm-none-eabi-objcopy  -O binary  6_linkerscript-memory.elf  "6_linkerscript-memory.bin"
+arm-none-eabi-size   6_linkerscript-memory.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1276	     18	   1592	   2886	    b46	6_linkerscript-memory.elf
+Finished building: default.size.stdout
+ 
+Finished building: 6_linkerscript-memory.bin
+Finished building: 6_linkerscript-memory.list
+ 
+ 
+
+10:46:11 Build Finished. 0 errors, 0 warnings. (took 633ms)
+

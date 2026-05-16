@@ -1,0 +1,10 @@
+10:34:53 **** Incremental Build of configuration Debug for project 5_linkerscript-sections ****
+make -j8 all 
+arm-none-eabi-size   5_linkerscript-sections.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1276	     18	   1592	   2886	    b46	5_linkerscript-sections.elf
+Finished building: default.size.stdout
+ 
+
+10:34:54 Build Finished. 0 errors, 0 warnings. (took 368ms)
+

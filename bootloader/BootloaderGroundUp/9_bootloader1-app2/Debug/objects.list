@@ -1,0 +1,6 @@
+"Src/main.o"
+"Src/syscalls.o"
+"Src/sysmem.o"
+"Src/timebase_min.o"
+"Src/uart_min.o"
+"Startup/startup_stm32f411retx.o"

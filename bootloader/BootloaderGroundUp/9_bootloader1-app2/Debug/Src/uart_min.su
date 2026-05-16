@@ -1,0 +1,2 @@
+uart_min.c:10:5:__io_putchar	16	static
+uart_min.c:16:13:uart_write	16	static

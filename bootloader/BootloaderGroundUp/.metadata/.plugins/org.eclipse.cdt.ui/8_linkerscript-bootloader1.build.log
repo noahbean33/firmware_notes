@@ -1,0 +1,20 @@
+11:44:33 **** Incremental Build of configuration Debug for project 8_linkerscript-bootloader1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -DSTM32F411xE -c -I../Inc -I"C:/Users/Gaming Laptop RTX/Documents/BootloaderGroundUp/8_linkerscript-bootloader1/chip_headers/CMSIS/Include" -I"C:/Users/Gaming Laptop RTX/Documents/BootloaderGroundUp/8_linkerscript-bootloader1/chip_headers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "8_linkerscript-bootloader1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Gaming Laptop RTX\Documents\BootloaderGroundUp\8_linkerscript-bootloader1\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_linkerscript-bootloader1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8_linkerscript-bootloader1.elf
+ 
+arm-none-eabi-size   8_linkerscript-bootloader1.elf 
+arm-none-eabi-objdump -h -S  8_linkerscript-bootloader1.elf  > "8_linkerscript-bootloader1.list"
+arm-none-eabi-objcopy  -O binary  8_linkerscript-bootloader1.elf  "8_linkerscript-bootloader1.bin"
+   text	   data	    bss	    dec	    hex	filename
+   1224	      8	   1576	   2808	    af8	8_linkerscript-bootloader1.elf
+Finished building: default.size.stdout
+ 
+Finished building: 8_linkerscript-bootloader1.list
+Finished building: 8_linkerscript-bootloader1.bin
+ 
+ 
+
+11:44:35 Build Finished. 0 errors, 0 warnings. (took 1s.332ms)
+

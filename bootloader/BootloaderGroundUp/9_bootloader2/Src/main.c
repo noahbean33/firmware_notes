@@ -1,0 +1,122 @@
+#include <stdio.h>
+#include "stm32f4xx.h"
+#include "fpu.h"
+#include "uart.h"
+#include "timebase.h"
+#include "bsp.h"
+
+/*Modules:
+ * FPU
+ * UART
+ * TIMEBASE
+ * GPIO (BSP)
+ * ADC
+ * */
+
+
+
+#define  GPIOAEN		(1U<<0)
+#define  PIN5			(1U<<5)
+#define  LED_PIN		PIN5
+
+bool btn_state;
+
+
+#define APPLICATION_ADDRESS 		0x08008000
+#define MSP_VERIFY_MASK			    0x2FFE0000
+#define EMPTY_MEM					0xFFFFFFFF
+typedef void(*func_ptr)(void);
+
+#define MEM_CHECKK_V2
+
+
+void jmp_to_default_app(void)
+{
+	uint32_t app_start_address;
+	func_ptr jump_to_app;
+
+	printf("Bootloader Started....\n\r");
+	delay(300);
+
+	/*Version 1*/
+#ifdef MEM_CHECKK_V1
+	if(((*(uint32_t *)APPLICATION_ADDRESS) & MSP_VERIFY_MASK ) ==  0x20020000)
+#endif
+
+#ifdef MEM_CHECKK_V2
+	/*Version 2*/
+	if((*(uint32_t *)APPLICATION_ADDRESS) != EMPTY_MEM)
+#endif
+
+	{
+		printf("Starting application.....\n\r");
+		app_start_address =  *(uint32_t *)(APPLICATION_ADDRESS + 4);
+
+		jump_to_app = (func_ptr) app_start_address;
+
+		/*Initialialize main stack pointer*/
+		__set_MSP(*(uint32_t *)APPLICATION_ADDRESS);
+
+		/*jump*/
+		jump_to_app();
+
+	}
+	else
+	{
+		printf("No application found at location....\n\r");
+	}
+
+
+}
+
+struct btl_common_apis
+{
+	void(*led_init)(void);
+	void(*led_toggle)(uint32_t dly);
+	void(*led_on)(void);
+	void(*led_off)(void);
+	void(*debug_uart_init)(void);
+	void(*button_init)(void);
+	bool(*get_btn_state)(void);
+	void(*fpu_enable)(void);
+	void(*timebase_init)(void);
+
+};
+struct btl_common_apis common_apis  __attribute__((section(".COMMON_APIS")))= {
+		led_init,
+		led_toggle,
+		led_on,
+		led_off,
+		debug_uart_init,
+		button_init,
+		get_btn_state,
+		fpu_enable,
+		timebase_init
+
+};
+int main()
+{
+	/*Enable FPU*/
+	fpu_enable();
+
+	/*Initialize debug UART*/
+	debug_uart_init();
+
+	/*Initialize timebase*/
+	timebase_init();
+
+	/*Initialize LED*/
+	led_init();
+
+	/*Initialize Push button*/
+
+	button_init();
+
+	jmp_to_default_app();
+
+	while(1)
+	{
+
+	}
+}
+
