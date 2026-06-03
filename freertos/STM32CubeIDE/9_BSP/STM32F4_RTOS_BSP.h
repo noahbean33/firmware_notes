@@ -24,7 +24,7 @@ void BSP_LED_greenToggle(void);
 void BSP_ADC1_Init(void);
 uint32_t BSP_ADC1_Read(void);
 
-void	BSP_Delay_MilliSecond(uint32_t delay);
+void BSP_Delay_MilliSecond(uint32_t delay);
 
 void BSP_Button_Init(void);
 uint32_t BSP_Button_Read(void);

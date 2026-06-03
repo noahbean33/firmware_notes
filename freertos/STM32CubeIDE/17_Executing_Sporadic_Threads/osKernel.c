@@ -79,7 +79,7 @@ void osKernelStackInit(int i){
 
 uint8_t osKernelAddPeriod_Thread(void(*task)(void),uint32_t period)
 {
-		if(NumPeriodicThreads == NUM_OF_THREADS || period ==0)
+		if(NumPeriodicThreads == NUM_PERIODIC_TASK || period ==0)
 		{
 			return 0;
 		}
@@ -214,6 +214,7 @@ void osPeriodicTask_Init(void(*task)(void), uint32_t freq, uint8_t priority)
 	TIM4->DIER |= 1;
 	NVIC_SetPriority(TIM4_IRQn,priority);
 	NVIC_EnableIRQ(TIM4_IRQn);
+	__enable_irq();
 }
 
 void TIM4_IRQHandler(void)
@@ -227,7 +228,7 @@ void osSemaphoreInit(int32_t *semaphore, int32_t value)
 	*semaphore = value;
 }
 
-void osSignalSet(int *semaphore)
+void osSignalSet(int32_t *semaphore)
 {
 	__disable_irq();
 	*semaphore +=1;
@@ -239,8 +240,8 @@ void osSignalWait(int32_t *semaphore)
 	__disable_irq();
 	while(*semaphore <= 0)
 	{
-		__disable_irq();
 		__enable_irq();
+		__disable_irq();
 	}
 	*semaphore -=1;
 	__enable_irq();
@@ -251,12 +252,12 @@ void osSignalCooperativeWait(int32_t *semaphore)
 	__disable_irq();
 	
 	while(*semaphore<=0){
-	 __disable_irq();
-		osThreadYield();
 		__enable_irq();
+		osThreadYield();
+		__disable_irq();
 	}
 	*semaphore -=1;
-	 __enable_irq();
+	__enable_irq();
 }
 
 void osThreadSleep(uint32_t sleep_time)

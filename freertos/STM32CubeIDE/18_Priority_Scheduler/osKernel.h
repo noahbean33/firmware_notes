@@ -23,7 +23,7 @@ void periodicTask1(void);
 void periodicTask2(void);
 
 void osSemaphoreInit(int32_t *semaphore, int32_t value);
-void osSignalSet(int *semaphore);
+void osSignalSet(int32_t *semaphore);
 void osSignalWait(int32_t *semaphore);
 
 void osEdgeTriggerInit(int32_t *semaphore);

@@ -85,7 +85,7 @@ void BSP_Probe_CH3(){
 void BSP_Button_Init(void)
 {
 	 RCC->AHB1ENR |= GPIOA_CLOCK;
-	 BSP_Button_PORT->MODER &= ~0x00000011; /*Clear PA0 pin*/
+	 BSP_Button_PORT->MODER &= ~0x00000003; /*Clear PA0 pin*/
 	
 }
 

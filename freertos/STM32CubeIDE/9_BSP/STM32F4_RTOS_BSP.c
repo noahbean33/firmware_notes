@@ -19,12 +19,12 @@
 #define BSP_Probe0_BIT			(1U<<0)			/*PC0 as output*/
 #define BSP_Probe1_BIT			(1U<<2)			/*PC1 as output*/
 #define BSP_Probe2_BIT			(1U<<4)			/*PC2	as output*/
-#define BSP_Probe3_BIT			(1U<<4)			/*Pc3	as output*/
+#define BSP_Probe3_BIT			(1U<<6)			/*Pc3	as output*/
 
 #define CH0									(1U<<0)
 #define CH1									(1U<<1)
 #define CH2									(1U<<2)
-#define CH3									(1U<<4)
+#define CH3									(1U<<3)
 
 
 void BSP_Probe_Init(void)
@@ -59,7 +59,7 @@ void BSP_Probe_CH3(void)
 void BSP_Button_Init(void)
 {
 	RCC->AHB1ENR	|= GPIOA_CLOCK;
-	GPIOA->MODER	&= ~0x00000011;	/*Clear PA0 Pin*/
+	GPIOA->MODER	&= ~0x00000003;	/*Clear PA0 Pin*/
 }
 
 uint32_t BSP_Button_Read(void)
@@ -70,7 +70,6 @@ uint32_t BSP_Button_Read(void)
 
 void	BSP_Delay_MilliSecond(uint32_t delay)
 {
-	RCC->AHB1ENR |= 
 	RCC->APB1ENR |= 0x02;			/*Enable TIM3 clock*/
 	TIM3->PSC	= 160 -1;				/*16 000 000 / 160 = 100 000*/
 	TIM3->ARR = 100 -1;				/* 100 000 /100 = 1000*/

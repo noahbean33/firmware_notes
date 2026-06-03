@@ -6,7 +6,6 @@ int main (void)
 {
 	BSP_ADC1_Init();
 	BSP_LED_Init();
-	BSP_ADC1_Init();
 	BSP_Button_Init();
 	BSP_Probe_Init();
 	int i;
